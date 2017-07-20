@@ -1,5 +1,5 @@
 /// Responsible for parsing GIF data and decoding the individual frames.
-public class Animator {
+@objc public class Animator: NSObject {
 
   /// Total duration of one animation loop
   var loopDuration: TimeInterval {
@@ -120,7 +120,7 @@ public class Animator {
   /// - parameter size: The target size of the individual frames.
   /// - parameter contentMode: The view content mode to use for the individual frames.
   /// - parameter loopCount: Desired number of loops, <= 0 for infinite loop.
-  func animate(withGIFNamed imageName: String, size: CGSize, contentMode: UIViewContentMode, loopCount: Int = 0) {
+  public func animate(withGIFNamed imageName: String, size: CGSize, contentMode: UIViewContentMode, loopCount: Int = 0) {
     prepareForAnimation(withGIFNamed: imageName, size: size, contentMode: contentMode, loopCount: loopCount)
     startAnimating()
   }
@@ -131,7 +131,7 @@ public class Animator {
   /// - parameter size: The target size of the individual frames.
   /// - parameter contentMode: The view content mode to use for the individual frames.
   /// - parameter loopCount: Desired number of loops, <= 0 for infinite loop.
-  func animate(withGIFData imageData: Data, size: CGSize, contentMode: UIViewContentMode, loopCount: Int = 0) {
+  public func animate(withGIFData imageData: Data, size: CGSize, contentMode: UIViewContentMode, loopCount: Int = 0) {
     prepareForAnimation(withGIFData: imageData, size: size, contentMode: contentMode, loopCount: loopCount)
     startAnimating()
   }
